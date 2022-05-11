@@ -1,24 +1,45 @@
+body {
+  background-color: black;
+  text-align: center;
+}
+
+h1 {
+  color: gray;
+}
+
 .circle {
   width: 200px;
   height: 200px;
+  display: inline-block;
 }
 
-.top-left-circle {
-  border-top-left-radius: 50%;
+.top-left {
+  border-top-left-radius: 100%;
   background-color: green;
 }
 
-.top-right-circle {
-  border-top-right-radius: 50%;
+.top-right {
+  border-top-right-radius: 100%;
   background-color: red;
 }
 
-.bottom-right-circle {
-  border-bottom-right-radius: 50%;
+.bottom-right {
+  border-bottom-right-radius: 100%;
   background-color: blue;
 }
 
-.bottom-left-circle {
-  border-bottom-left-radius: 50%;
+.bottom-left {
+  border-bottom-left-radius: 100%;
   background-color: yellow;
+}
+
+.center {
+  display: inline-block;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-color: black;
+  top: 175px;
+  left: 335px;
 }
