@@ -1,0 +1,24 @@
+.circle {
+  width: 200px;
+  height: 200px;
+}
+
+.top-left-circle {
+  border-top-left-radius: 50%;
+  background-color: green;
+}
+
+.top-right-circle {
+  border-top-right-radius: 50%;
+  background-color: red;
+}
+
+.bottom-right-circle {
+  border-bottom-right-radius: 50%;
+  background-color: blue;
+}
+
+.bottom-left-circle {
+  border-bottom-left-radius: 50%;
+  background-color: yellow;
+}
