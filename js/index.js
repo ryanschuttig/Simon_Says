@@ -8,12 +8,8 @@ const randomCircle = () => {
   return circles[parseInt(Math.random() * circles.length)];
 };
 
-const sequence = [
-  randomCircle(),
-  randomCircle(),
-  randomCircle(),
-  randomCircle(),
-];
+const sequence = [randomCircle()];
+let sequenceClick = [...sequence];
 
 const flash = (circle) => {
   return new Promise((resolve, reject) => {
@@ -27,10 +23,30 @@ const flash = (circle) => {
   });
 };
 
-const main = async () => {
-  for (const circle of sequence) {
-    await flash(circle);
+let canClick = false;
+
+const circleClicked = (circleClicked) => {
+  if (!canClick) return;
+  const selectedCircle = sequenceClick.shift();
+  if (selectedCircle === circleClicked) {
+    if (sequenceClick.length === 0) {
+      //   start new round
+      sequence.push(randomCircle());
+      sequenceClick = [...sequence];
+      startFlash();
+    }
+  } else {
+    //   end game
+    alert('Game Over');
   }
 };
 
-main();
+const startFlash = async () => {
+  canClick = false;
+  for (const circle of sequence) {
+    await flash(circle);
+  }
+  canClick = true;
+};
+
+startFlash();
