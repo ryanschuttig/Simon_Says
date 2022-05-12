@@ -3,16 +3,20 @@ const topRight = document.querySelector('.top-right');
 const bottomLeft = document.querySelector('.bottom-left');
 const bottomRight = document.querySelector('.bottom-right');
 
+// get random circle
 const randomCircle = () => {
   const circles = [topLeft, topRight, bottomLeft, bottomRight];
   return circles[parseInt(Math.random() * circles.length)];
 };
 
+// start sequence with a random circle
 const sequence = [randomCircle()];
+// array to keep track of selected circles
 let sequenceClick = [...sequence];
 
+// loops through sequence to flash each circle
 const flash = (circle) => {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     circle.className += ' select';
     setTimeout(() => {
       circle.className = circle.className.replace(' select', '');
